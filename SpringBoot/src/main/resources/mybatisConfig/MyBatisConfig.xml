@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <!-- 若不配置，mapper文件中的实体类需要些 路径+类名， 写了之后只需要写类名就行了， 但是类名要小些 -->
+    <typeAliases>
+        <!-- 批量处理类 -->
+        <package name="com.springboot.jingfei.SpringBoot.bean" />
+        <!--
+            该配置是专门针对某个类做的
+            <typeAlias alias="User" type="com.majing.learning.mybatis.entity.User"/>
+        -->
+    </typeAliases>
+</configuration>
