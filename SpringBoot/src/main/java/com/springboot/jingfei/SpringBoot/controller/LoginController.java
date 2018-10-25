@@ -10,6 +10,7 @@ public class LoginController {
     @RequestMapping("/")
     public ModelAndView login(){
         ModelAndView mv = new ModelAndView("demo");
+        mv.addObject("name","jingfei");
         return mv;
     }
 }

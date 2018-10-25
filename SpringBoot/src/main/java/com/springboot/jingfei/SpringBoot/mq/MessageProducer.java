@@ -26,7 +26,7 @@ public class MessageProducer {
      * spring boot的定时任务
      * 2s执行一次
      */
-    @Scheduled(fixedDelay = 2000)
+    //@Scheduled(fixedDelay = 2000)
     public void send(){
         jmsMessagingTemplate.convertAndSend(this.queue, "hello,queue");
     }

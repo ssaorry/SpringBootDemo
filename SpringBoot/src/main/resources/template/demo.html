@@ -1,10 +1,12 @@
 <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-    这是我的一个测试页面
+    <p th:text="'Hello, ' + ${name}" ></p>
 </body>
 </html>
