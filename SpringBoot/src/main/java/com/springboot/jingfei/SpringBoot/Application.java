@@ -4,6 +4,10 @@ import org.apache.activemq.command.ActiveMQQueue;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.scheduling.annotation.EnableAsync;
+import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
+
+import java.util.concurrent.Executor;
 
 
 /**
@@ -12,6 +16,8 @@ import org.springframework.context.annotation.Bean;
  *
  */
 @SpringBootApplication
+// 启用异步注解
+@EnableAsync
 public class Application {
 
 	/**
@@ -24,6 +30,21 @@ public class Application {
 	@Bean
 	public ActiveMQQueue queue(){
 		return new ActiveMQQueue("promoteAct");
+	}
+
+	private int corePoolSize = 10;
+	private int maxPoolSize = 200;
+	private int queueCapacity = 10;
+
+	@Bean(name = "threadPoolTaskExecutor")
+	public Executor threadPoolTaskExecutor() {
+		ThreadPoolTaskExecutor pool = new  ThreadPoolTaskExecutor();
+		pool.setCorePoolSize(corePoolSize);
+		pool.setMaxPoolSize(maxPoolSize);
+		pool.setQueueCapacity(queueCapacity);
+		pool.setThreadNamePrefix("ThreadPoolTaskExecutor-");
+		pool.initialize();
+		return pool;
 	}
 
 	public static void main(String[] args) {

@@ -19,7 +19,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.4.2.RELEASE</version>
+		<version>1.5.6.RELEASE</version>
 	</parent>
 
 	<properties>
@@ -66,6 +66,7 @@
 			<artifactId>spring-boot-starter-aop</artifactId>
 		</dependency>
 
+
 		<!-- 前端模板 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -96,12 +97,14 @@
 			<groupId>org.apache.activemq</groupId>
 			<artifactId>activemq-pool</artifactId>
 		</dependency>
+
 		<!--导入03版本的excel-->
 		<dependency>
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi</artifactId>
 			<version>RELEASE</version>
 		</dependency>
+
 		<!--导入07及以后版本的excel-->
 		<dependency>
 			<groupId>org.apache.poi</groupId>
